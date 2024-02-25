@@ -56,6 +56,7 @@ sudo vim Dockerfile
 '''
 
 - web01 디렉토리의 Dockerfile
+
 '''
 FROM nginx:1.18
 RUN rm /usr/share/nginx/html/index.html
@@ -63,11 +64,13 @@ COPY index.html /usr/share/nginx/html/index.html
 '''
 
 - web01 디렉토리의 index.html
+  
 '''
 <h1> Load Balance Test Page 01 </h1>
 '''
 
 - web01 디렉토리의 Dockerfile을 web02, web03에 copy
+  
 '''
 cp Dockerfile ../web02
 cp Dockerfile ../web02
@@ -94,7 +97,9 @@ sudo vim ../web03/index.html
 cd ..
 sudo vim docker-compose.yaml
 '''
+
 - WEB_LB 디렉토리의 docker-compose.yaml
+
 ```
 version: '3.8'
 
@@ -123,18 +128,22 @@ services:
 
 
 ## 디렉토리 및 파일 구조 확인
+
 ```
 cd ..
 tree
 ```
+
 > ![스크린샷 2024-02-25 오후 7 51 31](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/67d64c9b-4b34-4f8c-b047-cfa61c5522bc)
 
 
 
 ## docker-compose 실행시키기
+
 ```
 sudo docker-compose up
 ```
+
 > ![3](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/b06f950e-ed47-400b-a32f-79e1143c0f9d)
 
 ## 브라우저로 접속 후 새로고침 여러번 시행.
