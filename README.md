@@ -49,11 +49,11 @@ server {
 ```
 
 ## web01 디렉토리 작업
-'''
+```
 cd ..
 cd web01
 sudo vim Dockerfile
-'''
+```
 
 - web01 디렉토리의 Dockerfile
 
@@ -93,10 +93,10 @@ sudo vim ../web03/index.html
 ```
 ## WEB_LB 디렉토리 작업
 
-'''
+```
 cd ..
 sudo vim docker-compose.yaml
-'''
+```
 
 - WEB_LB 디렉토리의 docker-compose.yaml
 
