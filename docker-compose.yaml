@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web01:
+    build: ./web01
+    ports:
+      - "8001:80"
+  web02:
+    build: ./web02
+    ports:
+      - "8002:80"
+  web03:
+    build: ./web03
+    ports:
+      - "8003:80"
+  nginx_lb:
+    build: ./nginx_lb
+    ports:
+      - "8080:80"
+    depends_on:
+      - web01
+      - web02
+      - web03
