@@ -57,24 +57,24 @@ sudo vim Dockerfile
 
 - web01 디렉토리의 Dockerfile
 
-'''
+```
 FROM nginx:1.18
 RUN rm /usr/share/nginx/html/index.html
 COPY index.html /usr/share/nginx/html/index.html
-'''
+```
 
 - web01 디렉토리의 index.html
   
-'''
+```
 <h1> Load Balance Test Page 01 </h1>
-'''
+```
 
 - web01 디렉토리의 Dockerfile을 web02, web03에 copy
   
-'''
+```
 cp Dockerfile ../web02
 cp Dockerfile ../web02
-'''
+```
 
 ## web02, web03 디렉토리 작업
 ```
