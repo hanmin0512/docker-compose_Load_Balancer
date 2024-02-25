@@ -1,5 +1,5 @@
 ## docker-compose_Load_Balancer
-도커를 사용하여 Load Balance를 직접 구현해보자
+docker-compose를 사용하여 Load Balance를 직접 구현해보자
 
 ## Architecture
 > ![Lb_docker-compose-architecture](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/1cddeab1-9612-432a-8866-76cd2279f4ba)
