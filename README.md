@@ -1,4 +1,4 @@
-## docker_guide
+## docker-compose_Load_Balancer
 도커를 사용하여 Load Balance를 직접 구현해보자
 
 ## Architecture
