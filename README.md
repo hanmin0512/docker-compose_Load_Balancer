@@ -122,11 +122,20 @@ services:
 cd ..
 tree
 ```
-> ![2](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/b06f950e-ed47-400b-a32f-79e1143c0f9d)
+> ![스크린샷 2024-02-25 오후 7 51 31](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/67d64c9b-4b34-4f8c-b047-cfa61c5522bc)
+
 
 
 ## docker-compose 실행시키기
 ```
 sudo docker-compose up
 ```
-> 
+> ![3](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/b06f950e-ed47-400b-a32f-79e1143c0f9d)
+
+## 브라우저로 접속 후 새로고침 여러번 시행.
+> <img width="421" alt="4" src="https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/bb309e25-8f53-4b4d-bcb7-3b5648fd48c3">
+> <img width="413" alt="5" src="https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/f7bbfda1-349c-48cd-90fa-7203d2789717">
+> <img width="420" alt="6" src="https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/ea4e35f4-6fe3-4a03-b477-fff15830548e">
+
+## 정리
+- nginx
