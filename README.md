@@ -1,6 +1,11 @@
 ## docker_guide
 도커를 사용하여 Load Balance를 직접 구현해보자
 
+## Architecture
+> ![Lb_docker-compose-architecture](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/1cddeab1-9612-432a-8866-76cd2279f4ba)
+
+
+
 ## 환경 설정
 - install tools
 ```
@@ -113,9 +118,9 @@ services:
     depends_on:
       - web01
       - web02
-      - web03![스크린샷 2024-02-25 오후 7 50 04](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/4fb48b5f-448c-43d2-bc19-fa399b3a47fa)
-
+      - web03
 ```
+
 
 ## 디렉토리 및 파일 구조 확인
 ```
@@ -138,4 +143,8 @@ sudo docker-compose up
 > <img width="420" alt="6" src="https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/ea4e35f4-6fe3-4a03-b477-fff15830548e">
 
 ## 정리
-- nginx
+- nginx1.18 버전의 이미지를 각각 nbinx_lb, web01, web02, web03에 빌드한다.
+- nginx1.18 버전에서 로드벨런싱 설정은 컨테이너의 /etc/nginx/conf.d/default.conf 파일에서 정의하고 있기에 이 내용을 바꾸는 것을 Dockerfile에 스크립트로 작성하였다.
+- nginx_lb는 프록시 서버로 로드 벨런싱을 해주고 라운드로빈 방식으로 web01, web02, web03으로 forwarding을 해준다.
+- docker-compose는 여러 컨테이너를 정의하고 실행 하기 때문에 디렉토리 및 파일 구조와 같이 미리 정의를 했다.
+- 또한 docker-compose down 명령어를 통해 한번에 컨테이너 stop, remove, remove image 까지 한번에 해준다.
