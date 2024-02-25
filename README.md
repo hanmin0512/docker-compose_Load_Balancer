@@ -69,37 +69,61 @@ cp Dockerfile ../web02
 '''
 
 ## web02, web03 디렉토리 작업
-
-
-- docker-compose.yaml
 ```
-version : '3.3'
-services:
-  mydb:
-    image: mariadb:10.4.6
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: wordpress 
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER : userwordpress
-      MYSQL_PASSWORD : userwordpress
-    volumes:
-      - /home/kali/db-data:/var/lib/mysql
-    ports:
-      - "3306:3306"
+sudo vim ../web02/index.html
+```
+- web02 디렉토리의 index.html
+```
+<h1> Load Balance Test Page 02 </h1>
+```
+```
+sudo vim ../web03/index.html
+```
+- web02 디렉토리의 index.html
+```
+<h1> Load Balance Test Page 03 </h1>
+```
+## WEB_LB 디렉토리 작업
 
-  wordpress:
-    depends_on:
-      - mydb
-    image: wordpress:latest
+'''
+cd ..
+sudo vim docker-compose.yaml
+'''
+- WEB_LB 디렉토리의 docker-compose.yaml
+```
+version: '3.8'
+
+services:
+  web01:
+    build: ./web01
+    ports:
+      - "8001:80"
+  web02:
+    build: ./web02
+    ports:
+      - "8002:80"
+  web03:
+    build: ./web03
+    ports:
+      - "8003:80"
+  nginx_lb:
+    build: ./nginx_lb
     ports:
       - "8080:80"
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: mydb:33306
-      WORDPRESS_DB_USER: userwordpress
-      WORDPRESS_DB_PASSWORD: userwordpress
-      WORDPRESS_DB_NAME: wordpress
-    volumes:
-      - /home/kali/web-db:/var/www/html
+    depends_on:
+      - web01
+      - web02
+      - web03
+```
+
+## 디렉토리 및 파일 구조 확인
+```
+cd ..
+tree
+```
+> ![1](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/2d58cb64-611f-4c00-9061-c9c2fee6b7d9)
+
+## docker-compose 실행시키기
+```
+sudo docker-compose up
 ```
