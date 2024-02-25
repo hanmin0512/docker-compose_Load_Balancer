@@ -113,7 +113,8 @@ services:
     depends_on:
       - web01
       - web02
-      - web03
+      - web03![스크린샷 2024-02-25 오후 7 50 04](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/4fb48b5f-448c-43d2-bc19-fa399b3a47fa)
+
 ```
 
 ## 디렉토리 및 파일 구조 확인
@@ -121,9 +122,11 @@ services:
 cd ..
 tree
 ```
-> ![1](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/2d58cb64-611f-4c00-9061-c9c2fee6b7d9)
+> ![2](https://github.com/hanmin0512/docker_Load_Balancer/assets/37041208/b06f950e-ed47-400b-a32f-79e1143c0f9d)
+
 
 ## docker-compose 실행시키기
 ```
 sudo docker-compose up
 ```
+> 
